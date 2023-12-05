@@ -5,14 +5,8 @@ repository = "https://github.com/eltorocorp/yew-mermaid"
 readme = "../../Readme.md"
 edition = "2021"
 
-[features]
-default = []
-
 [dependencies]
-yew = { workpace = true }
+yew = { workpace = true, features = ["csr"] }
 mermaid-wasmbind = { version = "0.1", path = "../wasmbind-mermaid" }
 gloo-utils = "0.2.0"
 web-sys = { version = "0.3.66", features = ["Window", "Document"] }
-
-[patch.crates-io]
-yew = { git = "https://github.com/yewstack/yew" }

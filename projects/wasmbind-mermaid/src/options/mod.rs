@@ -1,6 +1,6 @@
 use crate::draw_mermaid;
 use serde_derive::{Deserialize, Serialize};
-use wasm_bindgen::{prelude::*, JsValue};
+use wasm_bindgen::prelude::*;
 use web_sys::Element;
 mod flow_chart;
 mod gantt;
@@ -92,6 +92,6 @@ impl MermaidOptions {
         unimplemented!()
     }
     pub fn render(&self, input: &Element, s: &str) -> String {
-        draw_mermaid(input, s, &JsValue::from_serde(self).unwrap())
+        draw_mermaid(input, s, &serde_wasm_bindgen::to_value(self).unwrap())
     }
 }

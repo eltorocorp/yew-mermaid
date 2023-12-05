@@ -6,6 +6,6 @@ readme = "../../Readme.md"
 edition = "2018"
 
 [dependencies]
-yew = { workspace = true }
+yew = { workspace = true, features = ["csr"] }
 yew-mermaid = { version = "0.2", path = "../yew-mermaid" }
 web-sys = { version = "0.3.66", features = ["Window", "Document"] }
