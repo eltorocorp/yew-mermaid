@@ -1,11 +1,8 @@
 [package]
 name = "yew-mermaid"
 version = "0.2.0"
-authors = ["Aster <192607617@qq.com>"]
-description = "Render math with KaTeX in Yew!"
-repository = "https://github.com/GalAster/yew-mermaid.js"
+repository = "https://github.com/eltorocorp/yew-mermaid"
 readme = "../../Readme.md"
-license = "MPL-2.0"
 edition = "2021"
 
 [features]

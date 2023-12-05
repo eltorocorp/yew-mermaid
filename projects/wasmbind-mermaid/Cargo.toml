@@ -1,14 +1,14 @@
 [package]
 name = "mermaid-wasmbind"
 version = "0.1.0"
-authors = ["Aster <galaster@foxmail.com>"]
 description = "KaTeX Render for wasm bind"
 edition = "2021"
-license = "MPL-2.0"
 readme = "Readme.md"
-repository = "https://github.com/GalAster/yew-mermaid.js"
+repository = "https://github.com/eltorocorp/yew-mermaid"
 include = ["/src/**/*"]
-# exclude = ["/tests/*", "/.idea/*", "/benches/*"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 serde = "1.0"
@@ -24,6 +24,3 @@ features = ["Element"]
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.39"
-
-[lib]
-crate-type = ["cdylib", "rlib"]
