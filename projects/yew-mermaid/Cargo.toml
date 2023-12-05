@@ -9,7 +9,7 @@ edition = "2021"
 default = []
 
 [dependencies]
-yew = { version = "0.21.0", features = ["csr"] }
+yew = { workpace = true }
 mermaid-wasmbind = { version = "0.1", path = "../wasmbind-mermaid" }
 gloo-utils = "0.2.0"
 web-sys = { version = "0.3.66", features = ["Window", "Document"] }

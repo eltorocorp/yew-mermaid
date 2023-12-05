@@ -78,58 +78,6 @@ pub fn app() -> Html {
     }
 }
 
-pub struct Model {}
-//     link: ComponentLink<Self>,
-//     storage: StorageService,
-//     input: String,
-// }
-
-// impl Component for Model {
-//     type Message = Event;
-//     type Properties = ();
-
-//     fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
-//         let input = {
-//             match storage.restore("mermaid") {
-//                 Json(Ok(restored)) => restored,
-//                 _ => String::from(include_str!("placehold.md")),
-//             }
-//         };
-//         Self { link, storage, input }
-//     }
-
-//     fn update(&mut self, msg: Self::Message) -> ShouldRender {
-//         match msg {
-//             Event::Input(s) => {
-//                 self.input = s;
-//                 self.storage.store("mermaid", Json(&self.input))
-//             }
-//         }
-//         true
-//     }
-
-//     fn change(&mut self, _: Self::Properties) -> ShouldRender {
-//         false
-//     }
-
-//     fn view(&self) -> Html {
-//         html! {
-//             <>
-//                 {header_view()}
-//                 <main>
-//                 <textarea
-//                      placeholder="Input mermaid code"
-//                      value=&self.input
-//                      oninput=self.link.callback(|input: InputData| Event::Input(input.value))
-//                  />
-//                 <div><label>{"Mermaid output svg:"}</label></div>
-//                 <Mermaid code=&self.input/>
-//                 </main>
-//             </>
-//         }
-//     }
-// }
-
 fn main() {
     yew::Renderer::<App>::new().render();
 }
