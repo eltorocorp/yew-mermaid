@@ -8,14 +8,14 @@ readme = "../../Readme.md"
 license = "MPL-2.0"
 edition = "2021"
 
+[features]
+default = []
+
 [dependencies]
-yew = "0.21"
-mermaid-wasmbind = {version = "0.1", path = "../wasmbind-mermaid" }
+yew = { version = "0.21.0", features = ["csr"] }
+mermaid-wasmbind = { version = "0.1", path = "../wasmbind-mermaid" }
 gloo-utils = "0.2.0"
 web-sys = { version = "0.3.66", features = ["Window", "Document"] }
 
-[dev-dependencies]
-
-
-[features]
-default = []
+[patch.crates-io]
+yew = { git = "https://github.com/yewstack/yew" }
