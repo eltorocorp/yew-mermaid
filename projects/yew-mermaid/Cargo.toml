@@ -6,11 +6,13 @@ description = "Render math with KaTeX in Yew!"
 repository = "https://github.com/GalAster/yew-mermaid.js"
 readme = "../../Readme.md"
 license = "MPL-2.0"
-edition = "2018"
+edition = "2021"
 
 [dependencies]
-yew = "0.17"
+yew = "0.21"
 mermaid-wasmbind = {version = "0.1", path = "../wasmbind-mermaid" }
+gloo-utils = "0.2.0"
+web-sys = { version = "0.3.66", features = ["Window", "Document"] }
 
 [dev-dependencies]
 

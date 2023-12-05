@@ -8,5 +8,5 @@ license = "MPL-2.0"
 edition = "2018"
 
 [dependencies]
-yew = "0.17"
+yew = "0.21"
 yew-mermaid = {version = "0.2", path = "../yew-mermaid" }

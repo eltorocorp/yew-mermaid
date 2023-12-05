@@ -1,7 +1,7 @@
 pub use mermaid_wasmbind::MermaidOptions;
-use yew::{prelude::*, Component, ComponentLink, Html, ShouldRender};
+use yew::{prelude::*, Component, Html};
 
-#[derive(Properties, Clone, PartialEq)]
+#[derive(Properties, Clone, PartialEq, Default)]
 pub struct MermaidProperties {
     pub code: String,
     #[prop_or(true)]
@@ -10,6 +10,7 @@ pub struct MermaidProperties {
     pub theme: String,
 }
 
+#[derive(Default)]
 pub struct Mermaid {
     pub props: MermaidProperties,
 }
@@ -18,27 +19,28 @@ impl Component for Mermaid {
     type Message = ();
     type Properties = MermaidProperties;
 
-    fn create(props: Self::Properties, _: ComponentLink<Self>) -> Self {
-        Self { props }
+    fn create(ctx: &Context<Mermaid>) -> Self {
+        Self::default()
     }
 
-    fn update(&mut self, _: Self::Message) -> ShouldRender {
+    fn update(&mut self, ctx: &yew::Context<Mermaid>, _: Self::Message) -> bool {
         false
     }
 
-    fn change(&mut self, props: Self::Properties) -> ShouldRender {
-        match self.props == props {
+    fn changed(&mut self, ctx: &yew::Context<Mermaid>, props: &MermaidProperties) -> bool {
+        match &self.props == props {
             true => false,
             false => {
-                self.props = props;
+                self.props = props.clone();
                 true
             }
         }
     }
 
-    fn view(&self) -> Html {
+    fn view(&self, ctx: &Context<Mermaid>) -> Html {
         let drawer = self.create_drawer();
-        let t = yew::utils::document().create_element("div").unwrap();
+        let document = gloo_utils::document();
+        let t = document.create_element("div").unwrap();
         t.set_inner_html(&drawer.render(&t, &self.props.code));
         Html::VRef(t.first_child().unwrap().into())
     }
